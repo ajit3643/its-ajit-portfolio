@@ -68,9 +68,8 @@ const Portfolio = () => {
       description:
         "This app bridges the gap between customers and food providers, ensuring fast, reliable, and delightful dining experiences, whether at home or on the go.",
       technologies: "React | Tailwind CSS",
-      link: "https://github.com/ajit3643/Namaste-React/tree/main/Food%20Ordering%20-%20Project",
-      github:
-        "https://github.com/ajit3643/Namaste-React/tree/main/Food%20Ordering%20-%20Project",
+      link: "https://nomzo.netlify.app/",
+      github: "https://github.com/ajit3643/Nomzo",
     },
   ];
 
