@@ -1,34 +1,35 @@
 import "./contact.css";
 
-import React, { useRef, useState } from "react";
-
+import React, { useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
-  const formRef = useRef();
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = async (event) => {
     setMessage(true);
-    emailjs
-      .sendForm(
-        "service_k2qawqh",
-        "template_c6rkpn6",
-        formRef.current,
-        "X7K7ebhIeOy3YwHki"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    event.preventDefault();
+    const formData = new FormData(event.target);
 
-    e.target.reset();
+    formData.append("access_key", "0d60bc2c-ca47-4361-9ebc-5651d015bc85");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    }
+    event.target.reset();
   };
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>
@@ -46,7 +47,7 @@ const Contact = () => {
             <a href="mailto:ajitinfotech28@gmail.com">Send a message</a>
           </article>
         </div>
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <input
             type="text"
             placeholder="Your Full Name"
