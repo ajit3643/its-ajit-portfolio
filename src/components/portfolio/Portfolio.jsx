@@ -4,7 +4,7 @@ import IMG1 from "../../assets/weather-app.png";
 import IMG2 from "../../assets/moviesflix.png";
 import IMG3 from "../../assets/typing.png";
 import IMG4 from "../../assets/quiz.png";
-import IMG5 from "../../assets/e-com.png";
+import IMG5 from "../../assets/iPod.png";
 import IMG6 from "../../assets/Nomzo.png";
 import React from "react";
 
@@ -53,13 +53,13 @@ const Portfolio = () => {
     },
     {
       id: 5,
-      title: "E-commerce Product Catalog",
+      title: "iPod Shuffle",
       img: IMG5,
       description:
-        "This catalog serves as the backbone of any e-commerce platform, enhancing user experience while driving sales and customer engagement.",
-      technologies: "Html | CSS | JavaScript",
-      link: "https://github.com/ajit3643/E-commerce-Product-Catalog",
-      github: "https://github.com/ajit3643/E-commerce-Product-Catalog",
+        "A modern recreation of the classic iPod, featuring interactive menus, a functional music player, and customizable themes and wallpapers.",
+      technologies: "React, Class Component",
+      link: "https://ipod-shuffle.netlify.app/",
+      github: "https://github.com/ajit3643/iPod",
     },
     {
       id: 6,
